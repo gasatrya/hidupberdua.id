@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  a {
+    @apply underline decoration-yellow-200 decoration-2 hover:bg-yellow-200 transition-colors;
+  }
+}
