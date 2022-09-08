@@ -17,8 +17,8 @@ const renderTitle = `${title} | ${SITE.title}`
 
 <BaseLayout title={renderTitle}>
   <article>
-    <h1>{title}</h1>
-    <span class="text-base italic text-gray-500">Ditulis oleh {SITE.author.name}</span>
+    <span class="text-center block text-base italic text-gray-500 mb-3">Ditulis oleh {SITE.author.name}</span>
+    <h1 class="text-center">{title}</h1>
     <slot />
   </article>
 </BaseLayout>

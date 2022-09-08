@@ -1,6 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 const defaultTheme = require('tailwindcss/defaultTheme')
-const em = (px, base) => `${round(px / base)}em`
 
 module.exports = {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
@@ -15,9 +14,6 @@ module.exports = {
           css: [
             {
               lineHeight: 1.5,
-              h1: {
-                marginBottom: 0,
-              },
             },
           ],
         },
