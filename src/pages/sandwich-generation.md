@@ -1,7 +1,7 @@
 ---
-layout: "../layouts/Artikel.astro"
+layout: "../layouts/Page.astro"
 title: Sandwich Generation
-date: "12 September 2022"
+date: "2022-09-09"
 excerpt: "Banyak yang menyarankan untuk hidup mandiri setelah menikah. Supaya kedepannya, kamu dapat mengatur rumah tanggamu sendiri dan tidak merasa ada yang ikut campur."
 ---
 

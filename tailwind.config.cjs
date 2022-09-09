@@ -14,6 +14,9 @@ module.exports = {
           css: [
             {
               lineHeight: 1.5,
+              h1: {
+                marginBottom: 0,
+              },
             },
           ],
         },

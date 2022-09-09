@@ -5,20 +5,22 @@ import { SITE } from '../config'
 export interface Props {
   content: {
     title: string
+    page: boolean
   }
 }
 
 const {
-  content: { title },
+  content: { title, page },
 } = Astro.props
 
 const renderTitle = `${title} | ${SITE.title}`
+const titleClass = page ? 'md:mb-10' : 'mb-0'
 ---
 
 <BaseLayout title={renderTitle}>
   <article>
-    <span class="text-center block text-base italic text-gray-500 mb-3">Ditulis oleh {SITE.author.name}</span>
-    <h1 class="text-center">{title}</h1>
+    <h1 class={titleClass}>{title}</h1>
+    {!page && <span class="text-base italic text-gray-500">Ditulis oleh {SITE.author.name}</span>}
     <slot />
   </article>
 </BaseLayout>
