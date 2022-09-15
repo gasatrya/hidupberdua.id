@@ -10,9 +10,9 @@
     "astro": "astro"
   },
   "devDependencies": {
-    "@astrojs/tailwind": "^1.0.0",
+    "@astrojs/tailwind": "^2.0.0",
     "@tailwindcss/typography": "^0.5.7",
-    "astro": "^1.1.7",
+    "astro": "^1.2.4",
     "luxon": "^3.0.3",
     "prettier": "^2.7.1",
     "prettier-plugin-astro": "^0.5.4"

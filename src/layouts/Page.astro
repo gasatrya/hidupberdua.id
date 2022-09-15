@@ -1,15 +1,19 @@
 ---
 import BaseLayout from './BaseLayout.astro'
 import { SITE } from '../config'
+import { toISO, toLocaleDate } from '../utils'
+import Footer from '../components/Footer.astro'
 
 export interface Props {
   content: {
     title: string
     page: boolean
+    frontmatter: any
   }
 }
 
 const {
+  frontmatter,
   content: { title, page },
 } = Astro.props
 
@@ -18,9 +22,31 @@ const titleClass = page ? 'md:mb-10' : 'mb-0'
 ---
 
 <BaseLayout title={renderTitle}>
-  <article>
-    <h1 class={titleClass}>{title}</h1>
-    {!page && <span class="text-base italic text-gray-500">Ditulis oleh {SITE.author.name}</span>}
-    <slot />
+  <article class="h-entry">
+    <header>
+      <h1 class={`p-name ${titleClass}`}>{title}</h1>
+      {
+        !page && (
+          <span class="text-base italic text-gray-500">
+            Ditulis oleh <span class="p-author">{SITE.author.name}</span>
+          </span>
+        )
+      }
+    </header>
+    <div class="e-content">
+      <slot />
+    </div>
+    {
+      !page && (
+        <footer>
+          <span class="text-base italic text-gray-500">
+            Diterbitkan pada
+            <time class="dt-published" datetime={toISO(frontmatter.date)}>
+              {toLocaleDate(frontmatter.date)}
+            </time>
+          </span>
+        </footer>
+      )
+    }
   </article>
 </BaseLayout>

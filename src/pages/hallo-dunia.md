@@ -1,8 +1,9 @@
 ---
 layout: "../layouts/Page.astro"
 title: Hidup Mandiri Setelah Menikah
+description: "Banyak yang menyarankan untuk hidup mandiri setelah menikah. Supaya kedepannya." 
 date: "2022-08-09T09:24"
-excerpt: "Banyak yang menyarankan untuk hidup mandiri setelah menikah. Supaya kedepannya, kamu dapat mengatur rumah tanggamu sendiri dan tidak merasa ada yang ikut campur." 
+tags:  
 ---
 
 Banyak yang menyarankan untuk hidup mandiri setelah menikah. Supaya kedepannya, kamu dapat mengatur rumah tanggamu sendiri dan tidak merasa ada yang ikut campur. Selain itu, dengan hidup bersama pasangan, kamu dan dia bisa sama-sama dewasa juga kesadaran saling membutuhkan satu sama lain juga lebih besar. 
