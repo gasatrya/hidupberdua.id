@@ -1,3 +1,10 @@
-body {
-  background-color: #020302;
-}
+// Loads sanitize CSS.
+@use '../../../node_modules/sanitize.css/sanitize.css';
+@use '../../../node_modules/sanitize.css/assets.css';
+@use '../../../node_modules/sanitize.css/forms.css';
+
+// Variables.
+@use 'root';
+
+// Base style.
+@use 'base';
