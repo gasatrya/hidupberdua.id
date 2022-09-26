@@ -1,6 +1,7 @@
 const pluginNavigation = require('@11ty/eleventy-navigation')
 const pluginRss = require('@11ty/eleventy-plugin-rss')
 const markdownIt = require('markdown-it')
+const filters = require('./utils/filters')
 
 module.exports = function (eleventyConfig) {
   // Watch folder.
@@ -30,6 +31,11 @@ module.exports = function (eleventyConfig) {
     linkify: true,
   })
   eleventyConfig.setLibrary('md', markdownLibrary)
+
+  // Filters.
+  Object.keys(filters).forEach((name) => {
+    eleventyConfig.addFilter(name, filters[name])
+  })
 
   // Eleventy config.
   return {

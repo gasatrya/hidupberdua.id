@@ -9,7 +9,8 @@
     'Times New Roman', Times, serif;
   --hb-color-accent: rgb(254 240 138);
   --hb-color-text: rgb(0 0 0);
+  --hb-color-content: rgb(55 65 81);
   --hb-color-text-gray: rgb(107 114 128);
   --hb-bg-gray: rgb(249 250 251);
-  --hb-max-content-width: #{function.rem(527px)};
+  --hb-max-content-width: #{function.rem(610px)};
 }

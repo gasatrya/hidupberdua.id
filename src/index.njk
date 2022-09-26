@@ -8,6 +8,7 @@ layout: base
             <h2 class="article-title">
                 <a class="p-url" href="{{ post.url }}"><span class="p-name">{{ post.data.title }}</span></a>
             </h2>
+            <span class="article-date">Diterbitkan pada <time class="dt-published" datetime="{{ post.date | dateToISO }}">{{ post.date | readableDate }}</time></span>
         </article>
     {% endfor %}
 </div>

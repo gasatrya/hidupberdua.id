@@ -10,4 +10,59 @@
     @extend %mx-auto;
     max-width: var(--hb-max-content-width);
   }
+
+  .articles .article {
+    margin-bottom: function.rem(28px);
+  }
+}
+
+.article-title {
+  font-size: function.rem(36px);
+  line-height: function.rem(40px);
+  margin-bottom: function.rem(7px);
+}
+
+h1.article-title {
+  font-size: 2.25rem;
+  font-size: clamp(2.25rem, 1rem + 5vw, 5rem);
+  line-height: 1.15;
+  margin-bottom: function.rem(7px);
+  text-align: center;
+}
+
+.article-header {
+  margin-bottom: function.rem(40px);
+}
+
+.article-date {
+  @extend %font-serif, %italic;
+  color: var(--hb-color-text-gray);
+}
+
+.content {
+  > * {
+    @extend %mx-auto;
+    max-width: 65ch;
+    padding-left: function.rem(20px);
+    padding-right: function.rem(20px);
+  }
+
+  > .wide {
+    max-width: 960px;
+  }
+
+  .e-content {
+    > :where(:not(h1, h2, h3, h4, h5, h6)) {
+      @extend %font-serif;
+      color: var(--hb-color-content);
+      font-size: function.rem(20px);
+    }
+  }
+}
+
+.author {
+  @extend %font-serif, %italic;
+  color: var(--hb-color-text-gray);
+  text-align: center;
+  display: block;
 }
