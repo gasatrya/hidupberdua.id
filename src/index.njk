@@ -2,4 +2,12 @@
 layout: base
 ---
 
-<h1>Test</h1>
+<div class="articles">
+    {% for post in collections.posts | reverse %}
+        <article class="h-entry article">
+            <h2 class="article-title">
+                <a class="p-url" href="{{ post.url }}"><span class="p-name">{{ post.data.title }}</span></a>
+            </h2>
+        </article>
+    {% endfor %}
+</div>

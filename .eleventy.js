@@ -2,23 +2,24 @@ const pluginNavigation = require('@11ty/eleventy-navigation')
 const pluginRss = require('@11ty/eleventy-plugin-rss')
 const markdownIt = require('markdown-it')
 
-module.exports = function (eleventConfig) {
+module.exports = function (eleventyConfig) {
   // Watch folder.
-  eleventConfig.addWatchTarget('./src/_assets')
+  eleventyConfig.addWatchTarget('./src/_assets')
 
   // Layouts alias.
-  eleventConfig.addLayoutAlias('base', 'base.njk')
+  eleventyConfig.addLayoutAlias('base', 'base.njk')
 
   // Pass-through files.
-  eleventConfig.setServerPassthroughCopyBehavior('copy')
-  eleventConfig.addPassthroughCopy({ './src/_assets/public': 'public' })
+  eleventyConfig.setServerPassthroughCopyBehavior('copy')
+  eleventyConfig.addPassthroughCopy({ './src/_assets/public': 'public' })
+  eleventyConfig.addPassthroughCopy({ './src/_assets/fonts': 'fonts' })
 
   // Plugins.
-  eleventConfig.addPlugin(pluginNavigation)
-  eleventConfig.addPlugin(pluginRss)
+  eleventyConfig.addPlugin(pluginNavigation)
+  eleventyConfig.addPlugin(pluginRss)
 
   // Collection: posts.
-  eleventConfig.addCollection('posts', function (collectionApi) {
+  eleventyConfig.addCollection('posts', function (collectionApi) {
     return collectionApi.getFilteredByGlob('src/posts/**/*.md')
   })
 
@@ -28,7 +29,7 @@ module.exports = function (eleventConfig) {
     breaks: true,
     linkify: true,
   })
-  eleventConfig.setLibrary('md', markdownLibrary)
+  eleventyConfig.setLibrary('md', markdownLibrary)
 
   // Eleventy config.
   return {

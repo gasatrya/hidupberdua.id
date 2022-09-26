@@ -1,10 +1,26 @@
+/**
+ * HidupBerdua.id main stylesheet.
+ */
+
+// Variables.
+@use 'root';
+
+// Fonts
+@use 'fonts';
+
 // Loads sanitize CSS.
 @use '../../../node_modules/sanitize.css/sanitize.css';
 @use '../../../node_modules/sanitize.css/assets.css';
 @use '../../../node_modules/sanitize.css/forms.css';
 
-// Variables.
-@use 'root';
-
 // Base style.
 @use 'base';
+
+// Header style.
+@use 'header';
+
+// Main & Article style.
+@use 'main';
+
+// Footer style.
+@use 'footer';

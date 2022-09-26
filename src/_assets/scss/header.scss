@@ -1,0 +1,33 @@
+@use 'reuse';
+@use 'function';
+
+.header {
+  @extend %d-flex, %items-center, %mx-auto;
+  max-width: function.rem(1280px);
+  justify-content: space-between;
+  padding: function.rem(20px);
+  background-color: var(--hb-bg-gray);
+  width: 100%;
+}
+
+.branding {
+  @extend %d-flex, %items-center;
+
+  .title {
+    margin: 0 function.rem(12px) 0 0;
+    font-size: function.rem(24px);
+    line-height: function.rem(32px);
+    padding-bottom: function.rem(4px);
+  }
+
+  .tagline {
+    @extend %m-reset, %font-serif;
+    font-style: italic;
+  }
+}
+
+.menu {
+  @extend %d-flex;
+  column-gap: function.rem(10px);
+  font-size: function.rem(14px);
+}

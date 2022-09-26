@@ -1,0 +1,13 @@
+@use 'reuse';
+@use 'function';
+
+.main {
+  flex: 1 1 0%;
+  margin-top: function.rem(80px);
+  margin-bottom: function.rem(80px);
+
+  > div {
+    @extend %mx-auto;
+    max-width: var(--hb-max-content-width);
+  }
+}

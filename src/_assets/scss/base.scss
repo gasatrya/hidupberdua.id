@@ -1,5 +1,29 @@
+@use 'reuse';
+
 body {
+  @extend %d-flex;
+  flex-direction: column;
   font-size: 1rem;
-  font-family: serif;
+  font-family: var(--hb-font-sans);
   line-height: 1.5;
+  color: var(--hb-color-text);
+  min-height: 100vh;
+}
+
+a {
+  color: var(--hb-color-text);
+  text-decoration-line: underline;
+  text-decoration-color: #fef08a;
+  text-decoration-thickness: 2px;
+  transition-property: background-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+
+  &:hover {
+    background-color: var(--hb-color-accent);
+  }
+}
+
+:where(h1, h2, h3, h4, h5, h6) {
+  @extend %m-reset, %tracking-tight;
 }
