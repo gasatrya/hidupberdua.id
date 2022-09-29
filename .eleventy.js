@@ -9,11 +9,13 @@ module.exports = function (eleventyConfig) {
 
   // Layouts alias.
   eleventyConfig.addLayoutAlias('base', 'base.njk')
+  eleventyConfig.addLayoutAlias('post', 'post.njk')
 
   // Pass-through files.
   eleventyConfig.setServerPassthroughCopyBehavior('copy')
   eleventyConfig.addPassthroughCopy({ './src/_assets/public': 'public' })
   eleventyConfig.addPassthroughCopy({ './src/_assets/fonts': 'fonts' })
+  eleventyConfig.addPassthroughCopy({ './src/_assets/css': 'css' })
 
   // Plugins.
   eleventyConfig.addPlugin(pluginNavigation)
@@ -35,6 +37,21 @@ module.exports = function (eleventyConfig) {
   // Filters.
   Object.keys(filters).forEach((name) => {
     eleventyConfig.addFilter(name, filters[name])
+  })
+
+  // Tags list.
+  function filterTagList(tags) {
+    return (tags || []).filter(
+      (tag) => ['all', 'nav', 'post', 'posts'].indexOf(tag) === -1
+    )
+  }
+  eleventyConfig.addCollection('tagList', function (collection) {
+    let tagSet = new Set()
+    collection.getAll().forEach((item) => {
+      ;(item.data.tags || []).forEach((tag) => tagSet.add(tag))
+    })
+
+    return filterTagList([...tagSet])
   })
 
   // Eleventy config.

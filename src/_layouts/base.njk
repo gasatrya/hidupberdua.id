@@ -4,13 +4,25 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{{ site.title }}</title>
+        <title>
+            {% if seoTitle %}
+                {{ seoTitle }} | {{ site.title }}
+            {% elif title %}
+                {{ title }} | {{ site.title }}
+            {% else %}
+                {{ site.title }}
+            {% endif %}
+        </title>
+
+        {% include "head/seo.njk" %}
+
+        {% include "head/fonts.njk" %}
         <link rel="stylesheet" href="{{ "/css/style.css" | url }}">
     </head>
-    <body>
+    <body class="text-lg selection:bg-yellow-200 min-h-screen flex flex-col">
         {% include "header.njk" %}
 
-        <main class="main">
+        <main class="font-serif prose md:prose-xl prose-headings:tracking-tight prose-headings:font-sans prose-headings:font-extrabold mx-auto my-20 flex-1">
             {{ content | safe }}
         </main>
 

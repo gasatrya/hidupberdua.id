@@ -6,12 +6,23 @@ layout: base
 
     <header>
         <h1 class="p-name mb-0"> {{ title }} </h1>
+        <span class="text-base italic text-gray-500">
+            Ditulis oleh <span> {{ author }} </span>
+        </span>
     </header>
 
     <div class="e-content"> {{ content | safe }} </div>
 
     <footer class="border-t-2 py-4">
         <span class="text-base italic text-gray-500">Diterbitkan pada <time class="dt-published" datetime="{{ date | dateToISO }}">{{ date | readableDate }}</time></span>
+
+        <span class="block text-base italic text-gray-500">
+            Topik:
+            {% for tag in tags %}
+                {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+                <a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>
+            {% endfor %}
+        </span>
     </footer>
 
 </article>

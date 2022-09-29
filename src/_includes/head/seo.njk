@@ -1,0 +1,41 @@
+{%- set renderTitle = seoTitle or title or site.title -%}
+{%- set renderDescription = description or site.description -%}
+{%- set absolutePageUrl -%}{{ page.url | url | absoluteUrl(site.url) }}{%- endset -%}
+{%- set isArticle = layout == 'post' -%}
+
+<meta name="description" content="{{ renderDescription }}">
+<meta name="generator" content="{{ eleventy.generator }}">
+<meta name="author" content="{{ site.author.name }}">
+<link rel="canonical" href="{{ absolutePageUrl }}">
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:locale" content="{{ site.language }}">
+<meta property="og:title" content="{{ renderTitle }}" />
+<meta property="og:description" content="{{ renderDescription }}" />
+<meta property="og:url" content="{{ absolutePageUrl }}" />
+{# <meta property="og:image" content="{%- if image -%}{% socialImage image %}{%- else -%}{{ site.author.avatar | url | absoluteUrl(site.url) }}{%- endif -%}"> #}
+<meta name="twitter:card" content="{% if isArticle -%}summary_large_image{% else %}summary{% endif %}" />
+<meta name="twitter:site" content="@HidupBerdua" />
+<meta name="twitter:creator" content="@HidupBerdua" />
+{%- if isArticle -%}
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="{{ page.date | dateToISO }}">
+{%- endif -%}
+
+<script type="application/ld+json">
+    {
+        "name":"{{ site.title }}",
+        "description":"{{ site.description }}",
+        "author": {
+            "@type":"Person",
+            "name":"{{ site.author.name }}"
+        },
+        "@type":"WebSite",
+        "url":"{{ site.url }}",
+        "image":"{{ site.author.avatar | url | absoluteUrl(site.url) }}",
+        "headline":"{{ site.title }}",
+        "sameAs":[
+            "{{ site.author.social.twitter }}",
+        ],
+        "@context":"http://schema.org"
+    }
+</script>

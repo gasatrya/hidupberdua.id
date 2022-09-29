@@ -1,0 +1,13 @@
+---
+permalink: /tags/
+layout: base
+title: Topik
+---
+<div class="mb-8 text-base font-sans">Dihalaman ini Anda bisa memilih topik yang Anda suka atau Anda ingin baca. Klik pada salah satu link di bawah ini, kemudian Anda akan dibawa ke halaman di mana Anda bisa memilih artikel untuk Anda baca.</div>
+
+<p class="font-bold font-sans text-sm">Topik:</p>
+
+{% for tag in collections.tagList %}
+  {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+  <a href="{{ tagUrl | url }}" class="px-1">{{ tag }}</a>
+{% endfor %}

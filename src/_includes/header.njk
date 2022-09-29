@@ -1,15 +1,18 @@
-<header class="header">
+<header class="p-5 bg-gray-50">
+    <div class="max-w-7xl mx-auto w-full flex justify-between items-center">
 
-    <section class="branding">
-        <h1 class="title">
-            <a href="/">{{ site.title }}</a>
-        </h1>
-        <p class="tagline">{{ site.tagline }}</p>
-    </section>
+        <section class="flex items-center">
+            <h1 class="text-2xl font-extrabold pb-1 mr-3 tracking-tight">
+                <a href="/">{{ site.title }}</a>
+            </h1>
+            <p class="text-base font-serif italic">{{ site.tagline }}</p>
+        </section>
 
-    <nav class="menu">
-        <a href="/">Beranda</a>
-        <a href="/tentang">Tentang</a>
-    </nav>
+        <nav class="text-sm flex gap-x-3">
+            {%- for entry in collections.all | eleventyNavigation %}
+            <a href="{{ entry.url | url }}">{{ entry.title }}</a>
+            {%- endfor %}
+        </nav>
 
+    </div>
 </header>

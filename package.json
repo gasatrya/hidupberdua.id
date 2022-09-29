@@ -5,9 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev:eleventy": "eleventy --serve --incremental",
-    "dev:sass": "sass --watch src/_assets/scss/style.scss dist/css/style.css",
+    "dev:tailwind": "npx tailwindcss -i ./src/_assets/css/style.css -o ./dist/css/style.css --watch",
     "dev": "cross-env ELEVENTY_ENV=development run-p clean dev:*",
-    "build:sass": "sass --no-source-map --style=compressed src/_assets/scss/style.scss dist/css/style.css",
     "build:eleventy": "eleventy",
     "build": "cross-env ELEVENTY_ENV=production run-s build:*",
     "clean": "rimraf dist/"
@@ -27,15 +26,16 @@
     "@11ty/eleventy-img": "^2.0.1",
     "@11ty/eleventy-navigation": "^0.3.5",
     "@11ty/eleventy-plugin-rss": "^1.2.0",
+    "@tailwindcss/typography": "^0.5.7",
+    "autoprefixer": "^10.4.12",
     "cross-env": "^7.0.3",
     "html-minifier": "^4.0.0",
-    "luxon": "^3.0.3",
+    "luxon": "^3.0.4",
     "markdown-it": "^13.0.1",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.4.16",
-    "postcss-preset-env": "^7.8.2",
     "rimraf": "^3.0.2",
-    "sass": "^1.55.0"
+    "tailwindcss": "^3.1.8"
   },
   "prettier": {
     "semi": false,
