@@ -11,7 +11,7 @@ layout: base
     <div class="e-content"> {{ content | safe }} </div>
 
     <footer class="border-t-2 py-4">
-        <span class="text-base italic text-gray-500">Diterbitkan pada <time class="dt-published" datetime="{{ date | dateToISO }}">{{ date | readableDate }}</time></span>
+        <span class="text-base italic text-gray-500">Diterbitkan pada <time class="dt-published" datetime="{{ page.date | dateToISO }}">{{ page.date | readableDate }}</time></span>
     </footer>
 
 </article>

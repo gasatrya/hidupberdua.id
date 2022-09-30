@@ -1,0 +1,5 @@
+# www.robotstxt.org
+
+User-agent: *
+
+Sitemap: https://hidupberdua.id/sitemap.xml

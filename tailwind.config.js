@@ -20,6 +20,13 @@ module.exports = {
             },
           ],
         },
+        base: {
+          css: [
+            {
+              lineHeight: 1.5,
+            },
+          ],
+        },
         DEFAULT: {
           css: {
             a: {

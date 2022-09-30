@@ -2,6 +2,8 @@ const pluginNavigation = require('@11ty/eleventy-navigation')
 const pluginRss = require('@11ty/eleventy-plugin-rss')
 const markdownIt = require('markdown-it')
 const filters = require('./utils/filters')
+const shortcodes = require('./utils/shortcodes')
+const transforms = require('./utils/transforms')
 
 module.exports = function (eleventyConfig) {
   // Watch folder.
@@ -16,6 +18,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ './src/_assets/public': 'public' })
   eleventyConfig.addPassthroughCopy({ './src/_assets/fonts': 'fonts' })
   eleventyConfig.addPassthroughCopy({ './src/_assets/css': 'css' })
+  eleventyConfig.addPassthroughCopy('src/robots.txt')
 
   // Plugins.
   eleventyConfig.addPlugin(pluginNavigation)
@@ -37,6 +40,16 @@ module.exports = function (eleventyConfig) {
   // Filters.
   Object.keys(filters).forEach((name) => {
     eleventyConfig.addFilter(name, filters[name])
+  })
+
+  // Shortcodes.
+  Object.keys(shortcodes).forEach((name) => {
+    eleventyConfig.addNunjucksAsyncShortcode(name, shortcodes[name])
+  })
+
+  // Transforms.
+  Object.keys(transforms).forEach((name) => {
+    eleventyConfig.addTransform(name, transforms[name])
   })
 
   // Tags list.

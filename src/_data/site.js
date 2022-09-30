@@ -8,7 +8,7 @@ module.exports = {
     name: 'Ga Satrya',
     email: 'hidupberdua.id@gmail.com',
     url: 'https://hidupberdua.id/',
-    avatar: '/public/avatar.jpeg',
+    avatar: '/public/avatar.png',
     social: {
       twitter: 'https://twitter.com/HidupBerdua/',
       instagram: 'https://www.instagram.com/hidupberdua/',

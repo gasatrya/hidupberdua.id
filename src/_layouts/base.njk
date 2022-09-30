@@ -16,13 +16,20 @@
 
         {% include "head/seo.njk" %}
 
+        <link rel="icon" type="image/png" sizes="192x192" href="/public/android-icon-192x192.png?v=1">
+        <link rel="apple-touch-icon" sizes="180x180" href="/public/apple-icon-180x180.png?v=1">
+        <link rel="icon" type="image/png" href="/public/favicon-32x32.png?v=1" sizes="32x32">
+        <link rel="icon" type="image/png" href="/public/favicon-16x16.png?v=1" sizes="16x16">
+        <link rel="shortcut icon" href="/public/favicon.ico?v=1">
+        <meta name="theme-color" content="#FEF08A">
+
         {% include "head/fonts.njk" %}
         <link rel="stylesheet" href="{{ "/css/style.css" | url }}">
     </head>
     <body class="text-lg selection:bg-yellow-200 min-h-screen flex flex-col">
         {% include "header.njk" %}
 
-        <main class="font-serif prose md:prose-xl prose-headings:tracking-tight prose-headings:font-sans prose-headings:font-extrabold mx-auto my-20 flex-1">
+        <main class="font-serif prose md:prose-xl prose-base prose-headings:tracking-tight prose-headings:font-sans prose-headings:font-extrabold mx-auto md:my-20 my-10 md:px-0 px-5 flex-1">
             {{ content | safe }}
         </main>
 

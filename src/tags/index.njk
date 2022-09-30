@@ -1,0 +1,4 @@
+<div class="mb-8 text-sm font-sans">Kumpulan artikel dengan topik <span class="font-bold">"{{ tag }}"</span></div>
+
+{% set posts = collections[ tag ] %}
+{% include "posts.njk" %}
